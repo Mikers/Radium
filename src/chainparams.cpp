@@ -93,11 +93,11 @@ public:
         vSeeds.push_back(CDNSSeedData("194.135.82.244", "194.135.82.244"));
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(76);
-        base58Prefixes[SCRIPT_ADDRESS] = list_of(58);
-        base58Prefixes[SECRET_KEY] =     list_of(121);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x73)(0xAA)(0xA1);
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x73)(0x44)(0x77);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,76);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,121);
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x73)(0xAA)(0xA1).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x73)(0x44)(0x77).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
