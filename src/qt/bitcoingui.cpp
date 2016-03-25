@@ -8,6 +8,7 @@
 #include <QApplication>
 
 #include "bitcoingui.h"
+
 #include "transactiontablemodel.h"
 #include "addressbookpage.h"
 #include "sendcoinsdialog.h"
@@ -498,7 +499,7 @@ void BitcoinGUI::createTrayIcon()
     trayIconMenu->addAction(quitAction);
 #endif
 
-    notificator = new Notificator(qApp->applicationName(), trayIcon, this);
+    notificator = new Notificator(qApp->applicationName(), trayIcon);
 }
 
 #ifndef Q_OS_MAC
